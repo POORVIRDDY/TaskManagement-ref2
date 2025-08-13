@@ -1,0 +1,93 @@
+﻿@model TaskManagement.Models.MstrUserStory
+
+@{
+    ViewData["Title"] = "CreateUserStory";
+    Layout = "../Shared/_Layout2.cshtml";
+}
+
+<h1>Create UserStory</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateUserStory" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            @* <div class="form-group">
+                <label asp-for="Project" class="control-label"></label>
+                <select id="myList" asp-for="ProjectId" class="form-control" disabled>
+                    <option value="">Select</option>
+                    @foreach (var item in @ViewBag.Projects)
+                    {
+                        <option value="@item.ProjectId">@item.ProjectTitle</option>
+                    }
+                </select>
+            </div> *@
+            <div class="form-group">
+                <label class="control-label">Project</label>
+                <input type="text" class="form-control" value="@ViewBag.Project.ProjectTitle" disabled />
+                <input type="hidden" asp-for="ProjectId" value="@ViewBag.Project.ProjectId" />
+                <span asp-validation-for="ProjectId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Owner" class="control-label"></label>
+                <select id="myList" asp-for="OwnerId" class="form-control">
+                    <option value="">Select</option>
+                    @foreach (var item in @ViewBag.Owners)
+                    {
+                        <option value="@item.UserId">@item.Name</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Points" class="control-label"></label>
+                <input asp-for="Points" class="form-control" />
+                <span asp-validation-for="Points" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            @*  <!-- File Upload Section -->
+            <div class="form-group">
+            <label for="fileUpload" class="control-label">Upload File</label>
+            <input type="file" id="fileUpload" name="file" class="form-control" />
+            </div> *@
+
+
+
+            <div class="form-group">
+                @* <form method="post" asp-controller="Upload" asp-action="Index" enctype="multipart/form-data"> *@
+                <input type="file" name="file" class="form-control" />
+                @*  <input type="submit" value="Upload" class="btn btn-primary" /> *@
+                @* </form> *@
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+
+        <!-- Button to Trigger Upload -->
+
+    </div>
+</div>
+
+<div>
+    <a asp-action="UserStory" asp-route-id="@Model?.ProjectId">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}

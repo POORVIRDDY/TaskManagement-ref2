@@ -1,0 +1,96 @@
+﻿@model IEnumerable<TaskManagement.Models.MstrUserStory>
+
+@{
+    ViewBag.Title = "User Story List";
+}
+
+<br />
+<button id="addUserStoryBtn" class="btn btn-success btn-sm">Add User Story</button>
+<br />
+
+<table id="jqGrid"></table>
+<div id="jqGridPager"></div>
+
+<link href="~/css/theme/jquery-ui.min.css" rel="stylesheet" />
+<link href="~/css/ui.jqgrid.css" rel="stylesheet" />
+
+@section scripts {
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+    <script src="~/js/jqgrid/grid.locale-en.js"></script>
+    <script src="~/js/jqgrid/jquery.jqgrid.min.js"></script>
+    <script src="~/js/jqgrid/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+            // Prepare data for jqGrid
+            const gridData = @Html.Raw(Json.Serialize(ViewBag.UserStories));
+
+            // Initialize jqGrid
+            $("#jqGrid").jqGrid({
+                datatype: "local", // Use local data
+                data: gridData, // Bind gridData to the jqGrid
+
+                colModel: [
+                    { label: "UserStoryId", name: "userStoryId", key: true, hidden: true },
+                    { label: "Description", name: "description", width: 200 },
+                    { label: "Points", name: "points", width: 80 },
+                    { label: "Project", name: "projectTitle", width: 150 },
+                    { label: "Owner", name: "ownerName", width: 150 },
+                    { label: "Last Modified By", name: "lastModifiedByName", width: 150 },
+                    { label: "Last Modified On", name: "lastModifiedOn", width: 120, formatter: "date" },
+                    { label: "Is Notes Attached", name: "isNotesAttached", width: 150 },
+                    {
+                        label: "Actions",
+                        name: "actions",
+                        width: 300,
+                        sortable: false,
+                        formatter: function (cellvalue, options, rowObject) {
+                            return `
+                                <button class="btn btn-primary btn-sm editBtn" data-id="${rowObject.userStoryId}">Edit</button><br>
+                                <button class="btn btn-primary btn-sm detailsBtn" data-id="${rowObject.userStoryId}">Details</button>
+                            `;
+                        },
+                        align: 'center'
+                    }
+                ],
+                pager: "#jqGridPager",
+                rowNum: 10,
+                rowList: [10, 20, 30],
+                sortname: "description",
+                sortorder: "asc",
+                viewrecords: true,
+                height: 'auto',
+                jsonReader: {
+                    repeatitems: false,
+                    id: "userStoryId"
+                }
+            });
+
+            // Add button click event
+            $('#addUserStoryBtn').on('click', function () {
+                window.location.href = '/UserStory/Create';
+            });
+
+            // Handle Edit and Delete buttons
+            $(document).on('click', '.editBtn', function () {
+                const userStoryId = $(this).data('id');
+                window.location.href = `/UserStory/Edit/${userStoryId}`;
+            });
+            $(document).on('click', '.detailsBtn', function () {
+                const userStoryId = $(this).data('id');
+                window.location.href = `/UserStory/Details/${userStoryId}`;
+            });
+
+            // $(document).on('click', '.deleteBtn', function () {
+            //     const userStoryId = $(this).data('id');
+            //     if (confirm("Are you sure you want to delete this user story?")) {
+            //         window.location.href = `/UserStory/Delete/${userStoryId}`;
+            //     }
+            // });
+
+            // Enable jqGrid navigation
+            $("#jqGrid").jqGrid('navGrid', '#jqGridPager',
+                { edit: false, add: false, del: false, search: true, refresh: true });
+        });
+    </script>
+}

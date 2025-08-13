@@ -1,0 +1,18 @@
+﻿@{
+    
+    Layout = "_Layout1";
+    Layout = "_Layout";
+    Layout = "_Layout2";
+    Layout = "_Layout3";
+    Layout = "_Layout4";
+    Layout = "_Layout5";
+}
+@{
+    Layout = ViewBag.Layout as string ?? "_Layout1";  // Default to "_Layout1" if ViewBag.Layout is not set
+    Layout = ViewBag.Layout as string ?? "_Layout";
+    Layout = ViewBag.Layout as string ?? "_Layout2";
+    Layout = ViewBag.Layout as string ?? "_Layout3";
+    Layout = ViewBag.Layout as string ?? "_Layout4";
+    Layout = ViewBag.Layout as string ?? "_Layout5";
+ 
+}

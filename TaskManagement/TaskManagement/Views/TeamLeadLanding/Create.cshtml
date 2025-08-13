@@ -1,0 +1,72 @@
+﻿@model TaskManagement.Models.MstrUserStory
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "../Shared/_Layout3.cshtml";
+}
+
+<h1>Create</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div class="form-group">
+                <label class="control-label">Project</label>
+                <input type="text" class="form-control" value="@ViewBag.Project.ProjectTitle" disabled />
+                <input type="hidden" asp-for="ProjectId" value="@ViewBag.Project.ProjectId" />
+                <span asp-validation-for="ProjectId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Owner</label>
+                <input type="text" class="form-control" value="@ViewBag.Owner.Name" disabled />
+                <input type="hidden" asp-for="OwnerId" value="@ViewBag.Owner.UserId" />
+                <span asp-validation-for="OwnerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Points" class="control-label"></label>
+                <input asp-for="Points" class="form-control" />
+                <span asp-validation-for="Points" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+           @*   <!-- File Upload Section -->
+            <div class="form-group">
+            <label for="fileUpload" class="control-label">Upload File</label>
+            <input type="file" id="fileUpload" name="file" class="form-control" />
+            </div> 
+ *@
+
+
+            <div class="form-group">
+                @* <form method="post" asp-controller="Upload" asp-action="Index" enctype="multipart/form-data"> *@
+                <input type="file" name="file" class="form-control" />
+                @*  <input type="submit" value="Upload" class="btn btn-primary" /> *@
+                @* </form> *@
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+
+        <!-- Button to Trigger Upload -->
+
+    </div>
+</div>
+
+<div>
+    <a asp-action="UserStory">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

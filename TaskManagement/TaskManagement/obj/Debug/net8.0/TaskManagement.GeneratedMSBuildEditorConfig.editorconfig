@@ -1,0 +1,355 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = TaskManagement
+build_property.RootNamespace = TaskManagement
+build_property.ProjectDir = C:\Users\poorvi reddy\OneDrive\Desktop\TaskManagement ref2\TaskManagement ref2\TaskManagement\TaskManagement\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\poorvi reddy\OneDrive\Desktop\TaskManagement ref2\TaskManagement ref2\TaskManagement\TaskManagement
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/AdministratorLanding/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvckxhbmRpbmdcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/AdministratorLanding/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvckxhbmRpbmdcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/AdministratorLanding/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvckxhbmRpbmdcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/AdministratorLanding/User.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvckxhbmRpbmdcVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/AdministratorLanding/UserNotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvckxhbmRpbmdcVXNlck5vdEZvdW5kLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Charts/Administrator.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhcnRzXEFkbWluaXN0cmF0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Charts/Customer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhcnRzXEN1c3RvbWVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Charts/ProjectManager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhcnRzXFByb2plY3RNYW5hZ2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Customer/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Customer/Customer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQ3VzdG9tZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Customer/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Customer/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Home/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFcnJvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Home/Index1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleDEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Login/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cQ2hhbmdlUGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Login/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Login/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9nb3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Notifications/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWZpY2F0aW9uc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/ProjectManagerLanding/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdE1hbmFnZXJMYW5kaW5nXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/ProjectManagerLanding/CreateUserStory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdE1hbmFnZXJMYW5kaW5nXENyZWF0ZVVzZXJTdG9yeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/ProjectManagerLanding/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdE1hbmFnZXJMYW5kaW5nXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/ProjectManagerLanding/DetailsTask.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdE1hbmFnZXJMYW5kaW5nXERldGFpbHNUYXNrLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/ProjectManagerLanding/DetailsUserStory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdE1hbmFnZXJMYW5kaW5nXERldGFpbHNVc2VyU3RvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/ProjectManagerLanding/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdE1hbmFnZXJMYW5kaW5nXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/ProjectManagerLanding/EditTask.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdE1hbmFnZXJMYW5kaW5nXEVkaXRUYXNrLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/ProjectManagerLanding/EditUserStory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdE1hbmFnZXJMYW5kaW5nXEVkaXRVc2VyU3RvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/ProjectManagerLanding/Index1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdE1hbmFnZXJMYW5kaW5nXEluZGV4MS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/ProjectManagerLanding/Project.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdE1hbmFnZXJMYW5kaW5nXFByb2plY3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/ProjectManagerLanding/Task.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdE1hbmFnZXJMYW5kaW5nXFRhc2suY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/ProjectManagerLanding/TaskNotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdE1hbmFnZXJMYW5kaW5nXFRhc2tOb3RGb3VuZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/ProjectManagerLanding/UserStory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdE1hbmFnZXJMYW5kaW5nXFVzZXJTdG9yeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Project/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Project/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Project/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Project/Project.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFxQcm9qZWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Project/ProjectNotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFxQcm9qZWN0Tm90Rm91bmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Registration/Registration.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0cmF0aW9uXFJlZ2lzdHJhdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Shared/_Layout2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Shared/_Layout3.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Shared/_Layout4.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Shared/_Layout5.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQ1LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Shared/_Layout6.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQ2LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Task/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Task/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Task/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Task/Task.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xUYXNrLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Task/TaskNotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xUYXNrTm90Rm91bmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/TeamLeadLanding/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbUxlYWRMYW5kaW5nXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/TeamLeadLanding/CreateTask.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbUxlYWRMYW5kaW5nXENyZWF0ZVRhc2suY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/TeamLeadLanding/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbUxlYWRMYW5kaW5nXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/TeamLeadLanding/DetailsTask.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbUxlYWRMYW5kaW5nXERldGFpbHNUYXNrLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/TeamLeadLanding/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbUxlYWRMYW5kaW5nXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/TeamLeadLanding/EditTask.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbUxlYWRMYW5kaW5nXEVkaXRUYXNrLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/TeamLeadLanding/Task.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbUxlYWRMYW5kaW5nXFRhc2suY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/TeamLeadLanding/TaskNotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbUxlYWRMYW5kaW5nXFRhc2tOb3RGb3VuZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/TeamLeadLanding/UserStory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbUxlYWRMYW5kaW5nXFVzZXJTdG9yeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/TeamLeadLanding/UserStoryNotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbUxlYWRMYW5kaW5nXFVzZXJTdG9yeU5vdEZvdW5kLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/TimeSheets/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGltZVNoZWV0c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Upload/Result.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXBsb2FkXFJlc3VsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/UserLanding/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckxhbmRpbmdcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/UserLanding/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckxhbmRpbmdcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/UserLanding/Task.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckxhbmRpbmdcVGFzay5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/UserStory/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclN0b3J5XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/UserStory/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclN0b3J5XERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/UserStory/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclN0b3J5XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/UserStory/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclN0b3J5XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/UserStory/UserStory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclN0b3J5XFVzZXJTdG9yeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/UserStory/UserStoryNotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclN0b3J5XFVzZXJTdG9yeU5vdEZvdW5kLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/User/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/User/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/User/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/User/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/User/User.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/User/UserNotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VyTm90Rm91bmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-7opx5vu9t6
+
+[C:/Users/poorvi reddy/OneDrive/Desktop/TaskManagement ref2/TaskManagement ref2/TaskManagement/TaskManagement/Views/Shared/_Layout1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQxLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-p1be9urwtr

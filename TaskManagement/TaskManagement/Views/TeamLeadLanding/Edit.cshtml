@@ -1,0 +1,139 @@
+﻿@model TaskManagement.Models.FileUserStory
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "../Shared/_Layout3.cshtml";
+
+}
+
+<h1>Edit</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="UserStoryId" />
+            @* <div class="form-group">
+            <label asp-for="ProjectId" class="control-label"></label>
+            <select asp-for="ProjectId" class="form-control" asp-items="ViewBag.ProjectId"></select>
+            <span asp-validation-for="ProjectId" class="text-danger"></span>
+            </div> *@
+            <div class="form-group">
+                <label asp-for="Project" class="control-label"></label>
+                <select id="myList" asp-for="ProjectId" class="form-control" disabled>
+                    <option value="">Select</option>
+                    @foreach (var item in @ViewBag.Projects)
+                    {
+                        <option value="@item.ProjectId">@item.ProjectTitle</option>
+                    }
+                </select>
+            </div>
+            @* <div class="form-group">
+                <label asp-for="ProjectId" class="control-label"></label>
+                <select id="myList" asp-for="ProjectId" class="form-control">
+                    <option value="">Select</option>
+                    @foreach (var item in ViewBag.Projects as SelectList)
+                    {
+                        <option value="@item.Value" @(item.Value == Model.ProjectId ? "selected" : "")>@item.Text</option>
+                    }
+                </select>
+            </div> *@
+
+
+            <div class="form-group">
+                <label asp-for="Owner" class="control-label"></label>
+                <select id="myList" asp-for="OwnerId" class="form-control" disabled>
+                    <option value="">Select</option>
+                    @foreach (var item in @ViewBag.Owners)
+                    {
+                        <option value="@item.UserId">@item.Name</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Points" class="control-label"></label>
+                <input asp-for="Points" class="form-control" />
+                <span asp-validation-for="Points" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            @* <div class="form-group">
+            <label asp-for="LastModifiedOn" class="control-label"></label>
+            <input asp-for="LastModifiedOn" class="form-control" />
+            <span asp-validation-for="LastModifiedOn" class="text-danger"></span>
+            </div> *@
+            @* <div class="form-group">
+            <label asp-for="LastModifiedBy" class="control-label"></label>
+            <select asp-for="LastModifiedBy" class="form-control" asp-items="ViewBag.LastModifiedBy"></select>
+            <span asp-validation-for="LastModifiedBy" class="text-danger"></span>
+            </div> *@
+
+            @*  <div class="form-group">
+            <label asp-for="LastModifiedBy" class="control-label"></label>
+            <select id="myList" asp-for="LastModifiedBy" class="form-control">
+            <option value="">Select</option>
+            @foreach (var item in @ViewBag.Managers)
+            {
+            <option value="@item.UserId">@item.Name</option>
+            }
+            </select>
+            <span asp-validation-for="LastModifiedBy" class="text-danger"></span>
+            </div>
+            *@
+            <div class="form-group">
+                @* <form method="post" asp-controller="Upload" asp-action="Index" enctype="multipart/form-data"> *@
+                <input type="file" name="file" class="form-control" />
+                <span class="text-danger">@ViewData["FileError"]</span> <!-- Optional file upload validation -->
+
+            </div>
+
+            @* <div class="form-group">
+            <label class="control-label">File(s)</label>
+            @foreach (var item in Model.Notes)
+            {
+            <label class="control-label">@item.FileName</label>
+            }
+            </div> *@
+
+
+            <div class="form-group">
+                <label class="control-label">File(s)</label>
+                @if (Model.Notes.Any())
+                {
+                    foreach (var item in Model.Notes)
+                    {
+                        <div>
+                            <label class="control-label">@item.FileName</label>
+                            <a href="@Url.Action("DownloadFile", new { noteId = new Guid(item.NotesId) })" class="btn btn-link">Download</a>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p>No files attached.</p>
+                }
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="UserStory">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

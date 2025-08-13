@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\TaskManagement",
+    "\\TaskManagement\\TaskManagement",
+    "\\TaskManagement\\TaskManagement\\Controllers",
+    "\\TaskManagement\\TaskManagement\\Views",
+    "\\TaskManagement\\TaskManagement\\Views\\Project"
+  ],
+  "SelectedNode": "\\TaskManagement\\TaskManagement\\Views\\Project\\Project.cshtml",
+  "PreviewInSolutionExplorer": false
+}

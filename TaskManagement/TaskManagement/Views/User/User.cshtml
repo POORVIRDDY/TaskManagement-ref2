@@ -1,0 +1,97 @@
+﻿@model IEnumerable<TaskManagement.Models.MstrUser>
+
+@{
+    ViewBag.Title = "User List";
+}
+<h4>Users List</h4>
+<br />
+<button id="addEmployeeBtn" class="btn btn-success btn-sm">Add Employee</button>
+<br />
+
+<table id="jqGrid"></table>
+<div id="jqGridPager"></div>
+
+<link href="~/css/theme/jquery-ui.min.css" rel="stylesheet" />
+<link href="~/css/ui.jqgrid.css" rel="stylesheet" />
+
+@section scripts {
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+    <script src="~/js/jqgrid/grid.locale-en.js"></script>
+    <script src="~/js/jqgrid/jquery.jqgrid.min.js"></script>
+    <script src="~/js/jqgrid/jquery-ui.min.js"></script>
+    <script>
+               $(function () {
+                   // Prepare data for jqGrid
+            const gridData = @Html.Raw(Json.Serialize(ViewBag.Users));
+
+                   // Initialize jqGrid
+                   $("#jqGrid").jqGrid({
+                        datatype: "local", // Use local data
+                        data: gridData, // Bind gridData to the jqGrid
+
+                       colModel: [
+                           { label: "UserId", name: "userId", key: true, hidden: true },
+                           { label: "Name", name: "name", width: 150 },
+                           { label: "Date of Birth", name: "dateOfBirth", width: 150, formatter: "date" },
+                           { label: "Nationality", name: "nationality", width: 100 },
+                           { label: "Phone No", name: "phoneNo", width: 120 },
+                           { label: "Email", name: "email", width: 200 },
+                           { label: "Role", name: "roleName", width: 120 },
+                           { label: "Activated", name: "isUserActivated", width: 100, formatter: "checkbox" },
+                           {
+                               label: "Actions",
+                               name: "actions",
+                               width: 300,
+                               sortable: false,
+                               formatter: function (cellvalue, options, rowObject) {
+                                   return `
+                                       <button class="btn btn-primary btn-sm editBtn" data-id="${rowObject.userId}">Edit</button><br>
+                                       <button class="btn btn-primary btn-sm detailsBtn" data-id="${rowObject.userId}">Details</button><br>
+                                       <button class="btn btn-danger btn-sm deleteBtn" data-id="${rowObject.userId}">Deactivate</button>
+                                   `;
+                               },
+                                align: 'center'
+                           }
+                       ],
+                       pager: "#jqGridPager",
+                       rowNum: 10,
+                       rowList: [10, 20, 30],
+                       sortname: "name",
+                       sortorder: "asc",
+                       viewrecords: true,
+                       height: 'auto',
+                       jsonReader: {
+                           repeatitems: false,
+                           id: "userId"
+                       }
+                   });
+
+                   // Add button click event
+                   $('#addEmployeeBtn').on('click', function () {
+                       window.location.href = '/User/Create';
+                   });
+
+                   // Handle Edit and Delete buttons
+                   $(document).on('click', '.editBtn', function () {
+                       const userId = $(this).data('id');
+                       window.location.href = `/User/Edit/${userId}`;
+                   });
+                   $(document).on('click', '.detailsBtn', function () {
+                       const userId = $(this).data('id');
+                       window.location.href = `/User/Details/${userId}`;
+                   });
+
+                   $(document).on('click', '.deleteBtn', function () {
+                       const userId = $(this).data('id');
+                       if (confirm("Are you sure you want to deactivate this user?")) {
+                           window.location.href = `/User/Delete/${userId}`;
+                       }
+                   });
+
+        // Enable jqGrid navigation
+                   $("#jqGrid").jqGrid('navGrid', '#jqGridPager',
+                       { edit: false, add: false, del: false, search: true, refresh: true });
+               });
+    </script>
+}

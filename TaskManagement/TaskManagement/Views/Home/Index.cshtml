@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "../Shared/_Layout1.cshtml";
+  
+}
+
+<div class="row landing-page m-0" style="min-height: 87vh;">
+    <div class="col-6 landing-page-left">
+        <h2 class="mb-3 fw-bold"> Hey! Welcome</h2>
+        <p>
+            Our platform is designed to streamline workflows and boost productivity by helping individuals and teams organize tasks, set priorities, and track progress in real-time. Key features include task creation, categorization, due date management, notifications, and collaboration tools.
+            <br /><br />
+            With a focus on simplicity and usability, our project ensures a seamless experience across all devices. Whether managing personal tasks or collaborating with a team, our platform keeps everything in one place for better time management and task completion.
+            <br /><br />
+
+            Transform your task management and enhance efficiency with our intuitive platform!
+        </p>
+        @using (Html.BeginForm("Login", "Login", FormMethod.Get))
+        {
+            <button class="submit mt-3 w-50" type="submit">Get Started <img class="ms-1" src="./right-arrow.svg" alt="" /></button>
+
+        }
+    </div>
+    <div class="col-6 landing-page-right">
+        <img src="./rb_2148819273.png" width="100%" height="100%"  />
+    </div>
+</div>

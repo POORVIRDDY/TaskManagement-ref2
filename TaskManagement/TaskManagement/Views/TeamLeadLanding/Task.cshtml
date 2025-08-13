@@ -1,0 +1,106 @@
+﻿@model IEnumerable<TaskManagement.Models.MstrTask>
+
+@{
+    ViewBag.Title = "Task List";
+    Layout = "../Shared/_Layout3.cshtml";
+}
+
+<br />
+<button id="addTaskBtn" class="btn btn-success btn-sm">Add Task</button>
+<br />
+
+<!-- Task List Grid -->
+<table id="jqGrid"></table>
+<div id="jqGridPager"></div>
+
+<!-- Include required CSS and JS for jqGrid -->
+<link href="~/css/theme/jquery-ui.min.css" rel="stylesheet" />
+<link href="~/css/ui.jqgrid.css" rel="stylesheet" />
+
+@section scripts {
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+    <script src="~/js/jqgrid/grid.locale-en.js"></script>
+    <script src="~/js/jqgrid/jquery.jqgrid.min.js"></script>
+    <script src="~/js/jqgrid/jquery-ui.min.js"></script>
+
+    <script>
+        $(function () {
+            // Prepare data for jqGrid
+            const gridData = @Html.Raw(Json.Serialize(ViewBag.Tasks));
+
+            // Initialize jqGrid
+            $("#jqGrid").jqGrid({
+                datatype: "local", // Use local data
+                data: gridData, // Bind gridData to the jqGrid
+
+                colModel: [
+                    { label: "TaskId", name: "taskId", key: true, hidden: true },
+                    { label: "Task No", name: "taskNo", width: 150 },
+                    { label: "AssignedTo", name: "assignedTo", width: 150 },
+                    { label: "Description", name: "description", width: 200, sortable: false },
+                    { label: "Status", name: "status", width: 100 },
+                    { label: "Project", name: "projectTitle", width: 150 },
+                    { label: "UserStory", name: "userStory", width: 150, sortable: false },
+                    { label: "Start Date", name: "startDate", width: 120, formatter: "date", sortable: false },
+                    { label: "End Date", name: "endDate", width: 120, formatter: "date", sortable: false },
+                    { label: "Estimated Hours", name: "totalEstimatedHours", width: 120, sortable: false },
+                    { label: "Hours Spent", name: "totalHoursSpent", width: 120, sortable: false },
+                    { label: "Remaining Hours", name: "totalRemainingHours", width: 120, sortable: false },
+                    { label: "Is Notes Attached", name: "isNotesAttached", width: 150 },
+                    {
+                        label: "Actions",
+                        name: "actions",
+                        width: 300,
+                        sortable: false,
+                        formatter: function (cellvalue, options, rowObject) {
+                            return `
+                                <button class="btn btn-primary btn-sm editBtn" data-id="${rowObject.taskId}">Edit</button><br>
+                                <button class="btn btn-primary btn-sm detailsBtn" data-id="${rowObject.taskId}">Detail</button><br>
+                                                `;
+                        },
+                        align: 'center'
+                    }
+                ],
+                pager: "#jqGridPager",
+                rowNum: 10,
+                rowList: [10, 20, 30],
+                sortname: "taskNo",
+                sortorder: "asc",
+                viewrecords: true,
+                height: 'auto',
+                jsonReader: {
+                    repeatitems: false,
+                    id: "taskId"
+                }
+            });
+
+            // Add button click event
+            $('#addTaskBtn').on('click', function () {
+                window.location.href = '/TeamLeadLanding/CreateTask';
+            });
+
+            // Handle Edit and Delete buttons
+            $(document).on('click', '.editBtn', function () {
+                const taskId = $(this).data('id');
+                window.location.href = `/TeamLeadLanding/EditTask/${taskId}`;
+            });
+
+            $(document).on('click', '.detailsBtn', function () {
+                const taskId = $(this).data('id');
+                window.location.href = `/TeamLeadLanding/DetailsTask/${taskId}`;
+            });
+
+            // $(document).on('click', '.deleteBtn', function () {
+            //     const taskId = $(this).data('id');
+            //     if (confirm("Are you sure you want to Deactivate this task?")) {
+            //         window.location.href = `/TeamLeadLanding/Delete/${taskId}`;
+            //     }
+            // });
+
+            // Enable jqGrid navigation
+            $("#jqGrid").jqGrid('navGrid', '#jqGridPager',
+                { edit: false, add: false, del: false, search: true, refresh: true });
+        });
+    </script>
+}

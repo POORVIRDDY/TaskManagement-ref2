@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+    --background: #DDE6ED;
+    --white: #ffffff;
+    --Card-bg: #526D82;
+    --btn-primary: #27374D;
+    --text-black: #121212;
+}
+
+*, body, html {
+    font-family: "Montserrat", sans-serif !important;
+}
+
+body {
+    background-color: var(--background);
+}
+
+.login-container {
+    background: var(--Card-bg);
+    width: 40vw;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+    .login-container h2, .heading {
+        font-size: 28px;
+    }
+
+    .login-container form {
+        width: 100%;
+    }
+
+        .login-container form .form-label, .login-container label {
+            color: #ffffffc4;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+.form-control {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-black);
+    border-radius: 5px;
+    padding: 12px 10px;
+}
+
+    .form-control:focus {
+        background-color: #fff;
+        border-color: transparent !important;
+        outline: 0;
+        box-shadow: rgba(255, 255, 255, 0.3) 0px 7px 29px 0px;
+    }
+
+.submit {
+    background: var(--btn-primary);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--white);
+    border-radius: 5px;
+    padding: 12px 10px;
+    border: none;
+    width: 100%;
+}
+
+    .submit:hover {
+        background: var(--btn-primary);
+        box-shadow: rgba(18, 18, 18, 0.3) 0px 7px 29px 0px;
+    }
+
+.login-container .btn-link {
+    color: #ffffffc4;
+    text-decoration: none;
+}
+
+    .login-container .btn-link:hover, .btn-link:hover {
+        color: var(--white);
+        text-decoration: underline;
+    }
+
+.register {
+    width: 90vw
+}
+
+    .register .form-group {
+        width: 30%;
+    }
+
+.landing-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.landing-page-left {
+    padding: 50px
+}
+
+.navbar {
+    height: 55px;
+    padding: 10px 30px;
+}
+
+.navbar-brand {
+    font-weight: 600
+}
+
+.register-btn {
+    background: white;
+    border: 1px solid var(--btn-primary);
+    border-radius: 5px;
+    color: var(--btn-primary) !important;
+    width: 120px;
+    height: 35px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+  
+.add-project{
+    width: 15% !important
+}
+.text-danger {
+    color: rgb(255 187 118) !important;
+}
+
+.ui-jqgrid-labels {
+    height: 45px;
+    width: 100% !important;
+    background-color: var(--Card-bg)
+}
+
+    .ui-jqgrid-labels th {
+        background-color: var(--Card-bg) !important;
+        color: #fff !important;
+        font-size: 14px;
+    }
+
+td[aria-describedby="jqGrid_actions"] {
+    display: flex;
+    gap: 0 10px;
+    align-items: center;
+    justify-content: center;
+}
+.action-btn {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 5px;
+}
+    .action-btn img{
+        width: 20px
+    }
+.deleteBtn img{
+    width: 15px;
+}
+.editBtn {
+    background: #007bff45;
+}
+.detailsBtn {
+    background: #28a74538;
+}
+.deleteBtn {
+    background: #dc35453b;
+}
+.ui-jqgrid tr.jqgrow td {
+    height: 45px !important;
+    color: #12121299;
+    text-align: center !important;
+    font-size: 14px;
+    font-weight: 500 !important;
+}
+.ui-jqgrid .ui-jqgrid-pager {
+    height: 40px !important;
+    font-size: 14px !important;
+    color: #121212 !important;
+}
+    .ui-jqgrid .ui-jqgrid-pager input, .ui-jqgrid .ui-jqgrid-pager select {
+        height: 30px;
+        width: 50px;
+        font-size: 14px;
+        text-align: center;
+    }
+.chart-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+#myDoughnutChart, #myBarChart {
+    width: 550px !important;
+    height: 300px !important;
+}
+#myDoughnutChart {
+    width: 300px !important;
+    height: 300px !important;
+}
+ .navbar-nav .nav-link:focus, .navbar-nav .nav-link:hover {
+    text-decoration: underline;
+}
+
+.register-btn:hover {
+    background-color: var(--btn-primary);
+    color: var(--white) !important;
+    text-decoration: none !important
+}
+
+.logout:hover {
+    background-color: #d35400;
+    border: none;
+    color: var(--white) !important;
+}
+.footer {
+    background: white;
+    padding: 10px 30px;
+    box-shadow: 0px 2px 6px #00000016;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .login-container {
+            width: 100vw;
+        }
+    }

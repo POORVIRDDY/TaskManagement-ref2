@@ -1,0 +1,97 @@
+﻿@model IEnumerable<TaskManagement.Models.MstrCustomer>
+
+@{
+    ViewBag.Title = "Customer List";
+}
+<h4>Customers List</h4>
+
+<br />
+<button id="addCustomerBtn" class="btn btn-success btn-sm">Add Customer</button>
+<br />
+
+<table id="jqGrid"></table>
+<div id="jqGridPager"></div>
+
+<link href="~/css/theme/jquery-ui.min.css" rel="stylesheet" />
+<link href="~/css/ui.jqgrid.css" rel="stylesheet" />
+
+@section scripts {
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+    <script src="~/js/jqgrid/grid.locale-en.js"></script>
+    <script src="~/js/jqgrid/jquery.jqgrid.min.js"></script>
+    <script src="~/js/jqgrid/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+            // Prepare data for jqGrid
+            const gridData = @Html.Raw(Json.Serialize(Model));
+
+            // Initialize jqGrid
+            $("#jqGrid").jqGrid({
+                datatype: "local", // Use local data
+                data: gridData, // Bind gridData to the jqGrid
+
+                colModel: [
+                    { label: "CustomerId", name: "customerId", key: true, hidden: true },
+                    { label: "CustomerName", name: "customerName", width: 150 },
+                    { label: "Address", name: "address", width: 150 },
+                    { label: "Country", name: "country", width: 100 },
+                    { label: "Status", name: "status", width: 120, formatter: "checkbox" },
+
+                    {
+                        label: "Actions",
+                        name: "actions",
+                        width: 300,
+                        sortable: false,
+                        formatter: function (cellvalue, options, rowObject) {
+                            return `
+                                                    <button class="btn btn-primary btn-sm editBtn" data-id="${rowObject.customerId}"style="width: 100px;">Edit</button><br>
+                                                        <button class="btn btn-primary btn-sm detailsBtn" data-id="${rowObject.customerId}"style="width: 100px;">Details</button><br>
+                                                    <button class="btn btn-danger btn-sm deleteBtn" data-id="${rowObject.customerId}"style="width: 100px;">Deactivate</button>
+                                     `;
+                        },
+                        align: 'center'
+                    }
+                ],
+                pager: "#jqGridPager",
+                rowNum: 10,
+                rowList: [10, 20, 30],
+                sortname: "name",
+                sortorder: "asc",
+                viewrecords: true,
+                height: 'auto',
+                jsonReader: {
+                    repeatitems: false,
+                    id: "userId"
+                }
+            });
+
+            // Add button click event
+            $('#addCustomerBtn').on('click', function () {
+                window.location.href = '/Customer/Create';
+            });
+
+            // Handle Edit and Delete buttons
+            $(document).on('click', '.editBtn', function () {
+                const userId = $(this).data('id');
+                window.location.href = `/Customer/Edit/${customerId}`;
+            });
+            $(document).on('click', '.detailsBtn', function () {
+                const userId = $(this).data('id');
+                window.location.href = `/Customer/Details/${customerId}`;
+            });
+
+
+            $(document).on('click', '.deleteBtn', function () {
+                const userId = $(this).data('id');
+                if (confirm("Are you sure you want to deactivate this user?")) {
+                    window.location.href = `/Customer/Delete/${customerId}`;
+                }
+            });
+
+            // Enable jqGrid navigation
+            $("#jqGrid").jqGrid('navGrid', '#jqGridPager',
+                { edit: false, add: false, del: false, search: true, refresh: true });
+        });
+    </script>
+}

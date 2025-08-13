@@ -1,0 +1,175 @@
+﻿@{
+    ViewData["Title"] = "Task Management";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+<h2 class="heading">@ViewData["Title"]</h2>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="chart-container">
+    <canvas id="myPieChart"></canvas>
+   @*  <canvas id="myDoughnutChart"></canvas> *@
+</div>
+@* <div class="chart-container">
+    <canvas id="myBarChart"></canvas>
+    <canvas id="myLineChart"></canvas>
+</div> *@
+
+
+<style>
+    .chart-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    #myPieChart, #myDoughnutChart {
+        width: 500px !important;
+        height: 500px !important;
+    }
+
+    #myBarChart, #myLineChart {
+        width: 400px !important;
+        height: 300px !important;
+    }
+</style>
+
+<script>
+    // Get data from ViewBag users
+    var labels = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.Labels));
+    var values = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.Values));
+    // // Get data from ViewBag for project
+    // var ProjectLabels = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.ProjectLabels));
+    // var ProjectValues = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.ProjectValues));
+    // // Get data from ViewBag for tasks
+    // var TaskStatusLabels = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.TaskStatusLabels));
+    // var TaskStatusValues = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.TaskStatusValues));
+    // // Get data from ViewBag for Customer
+    // var CustomerLabels = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.CustomerLabels));
+    // var CustomerValues = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.CustomerValues));
+
+    // Pie chart
+    var ctx = document.getElementById('myPieChart').getContext('2d');
+    var myPieChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Active Users',
+                data: values,
+                backgroundColor: ['#0047AB', '#F9A825', '#228B22', '#FF7043', '#87CEEB'],
+                hoverOffset: 4
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: 'top' },
+                tooltip: {
+                    callbacks: {
+                        label: function (tooltipItem) {
+                            return tooltipItem.label + ': ' + tooltipItem.raw + ' users';
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    // // Doughnut Chart
+    // var ctxDoughnut = document.getElementById('myDoughnutChart').getContext('2d');
+    // var myDoughnutChart = new Chart(ctxDoughnut, {
+    //     type: 'doughnut',
+    //     data: {
+    //         labels: TaskStatusLabels,
+    //         datasets: [{
+    //             label: 'Active Users',
+    //             data: TaskStatusValues,
+    //             backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#C9CBCF', '#FF9F00'],
+    //             hoverOffset: 4
+    //         }]
+    //     },
+    //     options: {
+    //         responsive: false,
+    //         maintainAspectRatio: false,
+    //         cutout: '60%',
+    //         plugins: {
+    //             legend: { position: 'top' },
+    //             tooltip: {
+    //                 callbacks: {
+    //                     label: function (tooltipItem) {
+    //                         return tooltipItem.label + ': ' + tooltipItem.raw + '%';
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // });
+
+    // // Bar Chart
+    // var ctxBar = document.getElementById('myBarChart').getContext('2d');
+    // var myBarChart = new Chart(ctxBar, {
+    //     type: 'bar',
+    //     data: {
+    //         labels: ProjectLabels,
+    //         datasets: [{
+    //             label: 'Project Status',
+    //             data: ProjectValues,
+    //             backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#C9CBCF'],
+    //             borderColor: '#1E90FF',
+    //             borderWidth: 1
+    //         }]
+    //     },
+    //     options: {
+    //         responsive: false,
+    //         maintainAspectRatio: false,
+    //         scales: {
+    //             y: { beginAtZero: true }
+    //         },
+    //         plugins: {
+    //             legend: { display: true, position: 'top' },
+    //             tooltip: {
+    //                 callbacks: {
+    //                     label: function (tooltipItem) {
+    //                         return tooltipItem.label + ': ' + tooltipItem.raw;
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // });
+    // // Line Chart
+    // var ctxLine = document.getElementById('myLineChart').getContext('2d');
+    // var myLineChart = new Chart(ctxLine, {
+    //     type: 'line',
+    //     data: {
+    //         labels: CustomerLabels,
+    //         datasets: [{
+    //             label: 'Customer Status',
+    //             data: CustomerValues,
+    //             backgroundColor: 'rgba(54, 162, 235, 0.2)',
+    //             borderColor: '#36A2EB',
+    //             borderWidth: 2,
+    //             fill: true
+    //         }]
+    //     },
+    //     options: {
+    //         responsive: false,
+    //         maintainAspectRatio: false,
+    //         scales: {
+    //             y: { beginAtZero: true }
+    //         },
+    //         plugins: {
+    //             legend: { display: true, position: 'top' },
+    //             tooltip: {
+    //                 callbacks: {
+    //                     label: function (tooltipItem) {
+    //                         return tooltipItem.label + ': ' + tooltipItem.raw;
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // });
+</script>

@@ -1,0 +1,105 @@
+﻿@model TaskManagement.Models.MstrUser
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "../Shared/_Layout.cshtml";
+}   
+
+<h1></h1>
+
+<h4>Create</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="DateOfBirth" class="control-label"></label>
+                <input asp-for="DateOfBirth" class="form-control" />
+                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+            </div>
+
+            @* <div class="form-group">
+                <label asp-for="Nationality" class="control-label"></label>
+                <input asp-for="Nationality" class="form-control" />
+                <span asp-validation-for="Nationality" class="text-danger"></span>
+            </div> *@
+
+            <div class="form-group">
+                <label asp-for="Nationality" class="control-label"></label>
+                <select asp-for="Nationality" class="form-control">
+                    <option value="">Select </option>
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                    <option value="UK">UK</option>
+                </select>
+                <span asp-validation-for="Nationality" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Role" class="control-label"></label>
+                <br />
+                <select id="myList" asp-for="RoleId" class="form-control">
+                    <option value="">Select</option>
+                    @foreach (var item in @ViewBag.Roles)
+                    {
+                        <option value="@item.RoleID">@item.Name</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PhoneNo" class="control-label">@* Mobile # *@</label>
+                <input asp-for="PhoneNo" class="form-control" />
+                <span asp-validation-for="PhoneNo" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" type="email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" type="password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label class="control-label"> </label>
+                <input class="form-check-input" asp-for="IsUserActivated" /> @Html.DisplayNameFor(model => model.IsUserActivated)
+            </div>
+           
+          @*   <div class="form-group">
+    <label asp-for="IsUserActivated" class="control-label"></label>
+                <select asp-for="IsUserActivated" class="form-control">
+                    <option value="">Select</option>
+                    <option value="Option1">true</option>
+                    <option value="Option2">false</option>
+                    
+                </select>
+    <span asp-validation-for="IsUserActivated" class="text-danger"></span>
+</div>
+            *@         <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="User">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

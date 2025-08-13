@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Logout";
+    Layout = "../Shared/_Layout.cshtml";  // Or use your common layout file
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TaskManagement</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6">
+                <div class="alert alert-success text-center" role="alert">
+                    <h2>You have been successfully logged out</h2>
+                    <p>Thank you for using TaskManagement. You can log in again if you'd like.</p>
+                </div>
+
+                <!-- Redirect to home page after a few seconds -->
+                <div class="text-center mt-3">
+                    <a class="btn btn-primary" href="@Url.Action("Index", "Home")">Go to Home Page</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Redirect user to home page after 5 seconds
+        setTimeout(function() {
+            window.location.href = '@Url.Action("Index", "Home")';
+        }, 5000);
+    </script>
+</body>
+</html>

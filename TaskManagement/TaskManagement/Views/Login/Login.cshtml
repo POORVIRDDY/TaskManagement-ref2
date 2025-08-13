@@ -1,0 +1,51 @@
+﻿@model TaskManagement.Models.LoginViewModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "../Shared/_Layout1.cshtml";
+}
+
+
+<div class="container-fluid d-flex justify-content-center align-items-center" style="min-height: 87vh;">
+    <div class="d-flex align-items-center justify-content-center flex-column login-container">
+        <h2 class="mb-4 text-center text-white fw-bold">Login</h2>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-group mb-3">
+                        @Html.LabelFor(m => m.Email, new { @class = "form-label" })
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", type = "email", placeholder = "Enter your email" })
+                       @*  @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" }) *@
+                    </div>
+
+                    <div class="form-group mb-5">
+                        @Html.LabelFor(m => m.Password, new { @class = "form-label" })
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Enter your password" })
+                       @*  @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" }) *@
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <button type="submit" class="btn btn-primary submit w-100">Login</button>
+                    </div>
+
+                    <div class="form-group text-center">
+                        <a href="@Url.Action("ChangePassword", "Login")" class="btn btn-link">Forgot your password?</a>
+                    </div>
+
+                    @if (ViewBag.EnteredEmail != null)
+                    {
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach (var error in ViewData.ModelState[""].Errors)
+                                {
+                                    <li>@error.ErrorMessage</li>
+                                }
+                            </ul>
+                        </div>
+                    }
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                }
+    </div>
+</div>

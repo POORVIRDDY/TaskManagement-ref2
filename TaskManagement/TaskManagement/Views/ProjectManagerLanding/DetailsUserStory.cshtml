@@ -1,0 +1,70 @@
+﻿@model TaskManagement.Models.MstrUserStory
+
+@{
+    ViewData["Title"] = "DetailsUserStory";
+    Layout = "../Shared/_Layout2.cshtml";
+
+}
+
+<h1>DetailsUserStory</h1>
+
+<div>
+
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Points)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Points)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LastModifiedOn)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LastModifiedOn)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IsNotesAttached)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IsNotesAttached)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LastModifiedByNavigation.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @* @if (Model.LastModifiedByNavigation != null)
+            { *@
+                @Html.DisplayFor(model => model.LastModifiedByNavigation.Name)
+            @* } 
+            else
+            {
+                <span>No user found</span>
+            }*@
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Owner)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Owner.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Project)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Project.ProjectTitle)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Task" asp-route-id="@Model?.UserStoryId">Tasks</a> |
+    <a asp-action="EditUserStory" asp-route-id="@Model?.UserStoryId">Edit</a> |
+    <a asp-action="UserStory" asp-route-id="@Model?.ProjectId">Back to List</a>
+</div>

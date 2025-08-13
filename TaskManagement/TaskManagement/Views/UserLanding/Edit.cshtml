@@ -1,0 +1,147 @@
+﻿@model TaskManagement.Models.FileTask
+
+@{
+    ViewData["Title"] = "EditTask";
+    Layout = "../Shared/_Layout4.cshtml";
+
+}
+
+<h1>Task</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TaskId" />
+            <div class="form-group">
+                <label asp-for="TaskNo" class="control-label"></label>
+                <input asp-for="TaskNo" class="form-control" readonly />
+                <span asp-validation-for="TaskNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AssignedTo" class="control-label"></label>
+                <select id="myList" asp-for="AssignedTo" class="form-control" disabled>
+                    <option value="">Select</option>
+                    @foreach (var item in @ViewBag.Users)
+                    {
+                        <option value="@item.UserId">@item.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Project" class="control-label"></label>
+                <select id="myList" asp-for="ProjectId" class="form-control" disabled>
+                    <option value="">Select</option>
+                    @foreach (var item in @ViewBag.Projects)
+                    {
+                        <option value="@item.ProjectId">@item.ProjectTitle</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" readonly />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+           <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <select asp-for="Status" class="form-control"disabled>
+                    <option value="">Select</option>
+                    <option value="Pending">Pending</option>
+                    <option value="NotStarted">Not Started</option>
+                    <option value="Completed">Completed</option>
+                </select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserStoryId" class="control-label"></label>
+                <select id="myList" asp-for="UserStoryId" class="form-control" disabled>
+                    <option value="">Select</option>
+                    @foreach (var item in @ViewBag.Userstory)
+                    {
+                        <option value="@item.UserStoryId">@item.Description</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ParentTaskId" class="control-label"></label>
+                <select id="myList" asp-for="ParentTaskId" class="form-control" disabled>
+                    <option value="">Select</option>
+                    @foreach (var item in @ViewBag.Tasks)
+                    {
+                        <option value="@item.TaskId">@item.TaskNo</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate" class="form-control" readonly />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndDate" class="control-label"></label>
+                <input asp-for="EndDate" class="form-control" readonly />
+                <span asp-validation-for="EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalEstimatedHours" class="control-label"></label>
+                <input asp-for="TotalEstimatedHours" class="form-control" readonly />
+                <span asp-validation-for="TotalEstimatedHours" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalHoursSpent" class="control-label"></label>
+                <input asp-for="TotalHoursSpent" class="form-control"/>
+                <span asp-validation-for="TotalHoursSpent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalRemainingHours" class="control-label"></label>
+                <input asp-for="TotalRemainingHours" class="form-control" readonly />
+                <span asp-validation-for="TotalRemainingHours" class="text-danger"></span>
+            </div>
+            @* <div class="form-group">
+                <input type="file" name="file" class="form-control" />
+                <span class="text-danger">@ViewData["FileError"]</span>
+            </div> *@
+
+            @* <div class="form-group">
+            <label class="control-label">File(s)</label>
+            @foreach (var item in Model.Notes)
+            {
+            <label class="control-label">@item.FileName</label>
+            }
+            </div> *@
+            <div class="form-group">
+                <label class="control-label">File(s)</label>
+                @if (Model.Notes.Any())
+                {
+                    foreach (var item in Model.Notes)
+                    {
+                        <div>
+                            <label class="control-label">@item.FileName</label>
+                            <a href="@Url.Action("DownloadFile", new { noteId = new Guid(item.NotesId) })" class="btn btn-link">Download</a>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p>No files attached.</p>
+                }
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Task" asp-route-id="@Model?.UserStoryId">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

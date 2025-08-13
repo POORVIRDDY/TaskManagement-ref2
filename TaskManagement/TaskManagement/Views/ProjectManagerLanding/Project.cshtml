@@ -1,0 +1,106 @@
+﻿@model IEnumerable<TaskManagement.Models.MstrProject>
+
+@{
+    ViewBag.Title = "Project List";
+    Layout = "../Shared/_Layout2.cshtml";
+}
+
+<div class="d-flex justify-content-end w-100 mb-3 mt-4">
+    <button id="addProjectBtn" class="submit btn-sm add-project">Add Project </button>
+</div>
+<table id="jqGrid"></table>
+<div id="jqGridPager"></div>
+<link href="~/css/theme/jquery-ui.min.css" rel="stylesheet" />
+<link href="~/css/ui.jqgrid.css" rel="stylesheet" />
+@section scripts {
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+    <script src="~/js/jqgrid/grid.locale-en.js"></script>
+    <script src="~/js/jqgrid/jquery.jqgrid.min.js"></script>
+    <script src="~/js/jqgrid/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+            // Prepare data for jqGrid
+            const gridData = @Html.Raw(Json.Serialize(ViewBag.Projects));
+
+            // Initialize jqGrid
+            $("#jqGrid").jqGrid({
+                datatype: "local", // Use local data
+                data: gridData, // Bind gridData to the jqGrid
+
+                colModel: [
+                    { label: "ProjectId", name: "projectId", key: true, hidden: true },
+                    { label: "ProjectTitle", name: "projectTitle" },
+                    { label: "Customer", name: "customerName" },
+                    { label: "Manager", name: "name" },
+                    { label: "LastModifiedBy", name: "lastmodifiedby", sortable: false },
+                    { label: "Type", name: "type" },
+                    { label: "LastModifiedOn", name: "lastModifiedOn", formatter: "date", sortable: false },
+                    { label: "Start Date", name: "startDate", formatter: "date", sortable: false },
+                    { label: "End Date", name: "endDate", formatter: "date", sortable: false },
+                    { label: "Status", name: "status" },
+                    {
+                        label: "Actions",
+                        name: "actions",
+                        width: 150,
+                        sortable: false,
+                        formatter: function (cellvalue, options, rowObject) {
+                            const infoIcon = '@Url.Content("~/feather-info.svg")';
+                            const editIcon = '@Url.Content("~/feather-edit.svg")';
+                            const deleteIcon = '@Url.Content("~/metro-bin.svg")';
+
+                            return `
+                        <button class="action-btn editBtn" title="Edit" data-id="${rowObject.projectId}">
+                                            <img src="${editIcon}" alt="Edit Icon" />
+                        </button>
+                        <button class="action-btn detailsBtn" title="Details" data-id="${rowObject.projectId}">
+                                    <img src="${infoIcon}" alt="Details Icon" />
+                        </button>
+                        <button class="action-btn deleteBtn" title="Deactivate" data-id="${rowObject.projectId}">
+                            <img src="${deleteIcon}"  alt="Delete Icon" />
+                        </button>
+                    `;
+                        },
+                        align: 'center'
+                    }
+                ],
+                pager: "#jqGridPager",
+                rowNum: 10,
+                rowList: [10, 20, 30],
+                sortname: "projectName",
+                sortorder: "asc",
+                viewrecords: true,
+                height: 'auto',
+                jsonReader: {
+                    repeatitems: false,
+                    id: "projectId"
+                }
+            });
+
+            // Add button click event
+            $('#addProjectBtn').on('click', function () {
+                window.location.href = '/ProjectManagerLanding/Create';
+            });
+
+            // Handle Edit and Delete buttons
+            $(document).on('click', '.editBtn', function () {
+                const projectId = $(this).data('id');
+                window.location.href = `/ProjectManagerLanding/Edit/${projectId}`;
+            });
+            $(document).on('click', '.detailsBtn', function () {
+                const projectId = $(this).data('id');
+                window.location.href = `/ProjectManagerLanding/Details/${projectId}`;
+            });
+            $(document).on('click', '.deleteBtn', function () {
+                const projectId = $(this).data('id');
+                if (confirm("Are you sure you want to deactivate this project?")) {
+                    window.location.href = `/ProjectManagerLanding/Delete/${projectId}`;
+                }
+            });
+
+            // Enable jqGrid navigation
+            $("#jqGrid").jqGrid('navGrid', '#jqGridPager',
+                { edit: false, add: false, del: false, search: true, refresh: true });
+        });
+    </script>
+}

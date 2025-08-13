@@ -1,0 +1,30 @@
+﻿@model TaskManagement.Models.MstrCustomer
+@{
+    ViewData["Title"] = "Details";
+    Layout = "../Shared/_Layout.cshtml";
+
+}
+
+<h2>Customer Details</h2>
+
+<div>
+    <strong>Name:</strong> @Model.CustomerName
+</div>
+<div>
+    <strong>Address:</strong> @Model.Address
+</div>
+<div>
+    <strong>Country:</strong> @Model.Country
+</div>
+<div>
+    <strong>Status:</strong> @(Model.Status == true ? "Active" : "Inactive")
+</div>
+
+<p>
+    <a href="@Url.Action("Customer")" class="btn btn-primary">Back to List</a>
+    <a href="@Url.Action("Edit", new { id = Model.CustomerId })" class="btn btn-warning">Edit</a>
+</p>
+
+<div>
+    <a asp-action="Customer">Back to List</a>
+</div>

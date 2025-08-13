@@ -1,0 +1,108 @@
+﻿@model IEnumerable<TaskManagement.Models.MstrUser>
+
+@{
+    ViewBag.Title = "User List";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+<h4>Users List</h4>
+@* <br />
+<button id="addEmployeeBtn" class="btn btn-success btn-sm">Add Employee</button>
+<br /> *@
+
+<table id="jqGrid"></table>
+<div id="jqGridPager"></div>
+
+<link href="~/css/theme/jquery-ui.min.css" rel="stylesheet" />
+<link href="~/css/ui.jqgrid.css" rel="stylesheet" />
+
+@section scripts {
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+    <script src="~/js/jqgrid/grid.locale-en.js"></script>
+    <script src="~/js/jqgrid/jquery.jqgrid.min.js"></script>
+    <script src="~/js/jqgrid/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+
+            const gridData = @Html.Raw(Json.Serialize(ViewBag.Users));
+
+
+            $("#jqGrid").jqGrid({
+                datatype: "local",
+                data: gridData,
+
+                colModel: [
+                    { label: "UserId", name: "userId", key: true, hidden: true },
+                    { label: "Name", name: "name", width: 150 },
+                    { label: "Date of Birth", name: "dateOfBirth", formatter: "date", sortable: false },
+                    { label: "Nationality", name: "nationality"},
+                    { label: "Phone No", name: "phoneNo", sortable: false },
+                    {
+                        label: "Email", name: "email", width: 360, sortable: false },
+                    { label: "Role", name: "roleName" },
+                    { label: "Activated", name: "isUserActivated", formatter: "checkbox" },
+                    {
+                        label: "Actions",
+                        name: "actions",
+                        sortable: false,
+                        formatter: function (cellvalue, options, rowObject) {
+                            const infoIcon = '@Url.Content("~/feather-info.svg")';
+                            const editIcon = '@Url.Content("~/feather-edit.svg")';
+                            const deleteIcon = '@Url.Content("~/metro-bin.svg")';
+                            return `
+                                                       <button class="action-btn editBtn" data-id="${rowObject.userId}">
+                                                                  <img src="${editIcon}" alt="Edit Icon" />
+                                                       </button>
+                                                      <button class="action-btn detailsBtn" data-id="${rowObject.userId}">
+                                                                   <img src="${infoIcon}" alt="Details Icon" />
+                                                       </button>
+                                                      <button class="action-btn deleteBtn" data-id="${rowObject.userId}">
+                                                                  <img src="${deleteIcon}"  alt="Delete Icon" />
+                                                         </button>
+                                                   `;
+                        },
+                        align: 'center'
+                    }
+                ],
+                pager: "#jqGridPager",
+                rowNum: 10,
+                rowList: [10, 20, 30],
+                sortname: "name",
+                sortorder: "asc",
+                viewrecords: true,
+                height: 'auto',
+                jsonReader: {
+                    repeatitems: false,
+                    id: "userId"
+                }
+            });
+
+
+            //    $('#addEmployeeBtn').on('click', function () {
+            // window.location.href = '/AdministratorLanding/Create';
+            //    });
+
+
+            $(document).on('click', '.editBtn', function () {
+                const userId = $(this).data('id');
+                window.location.href = `/AdministratorLanding/Edit/${userId}`;
+            });
+            $(document).on('click', '.detailsBtn', function () {
+                const userId = $(this).data('id');
+                window.location.href = `/AdministratorLanding/Details/${userId}`;
+            });
+
+            $(document).on('click', '.deleteBtn', function () {
+                const userId = $(this).data('id');
+                if (confirm("Are you sure you want to deactivate this user?")) {
+                    window.location.href = `/AdministratorLanding/Delete/${userId}`;
+                }
+            });
+
+
+            $("#jqGrid").jqGrid('navGrid', '#jqGridPager',
+                { edit: false, add: false, del: false, search: true, refresh: true });
+        });
+    </script>
+}

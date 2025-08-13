@@ -1,0 +1,80 @@
+﻿@model IEnumerable<TaskManagement.Models.MstrTimeSheet>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "../Shared/_Layout2.cshtml";
+
+}
+
+<h1>Index</h1>
+
+@* <p>
+    <a asp-action="Create">Create New</a>
+</p> *@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddedOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApprovedByNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Task)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hours)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AddedOn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApprovedByNavigation.UserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Project.ProjectId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Task.TaskId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.UserId)
+                </td>
+                @* <td>
+            <a asp-action="Edit" asp-route-id="@item.TimeSheetId">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.TimeSheetId">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.TimeSheetId">Delete</a>
+            </td> *@
+            </tr>
+        }
+    </tbody>
+</table>
